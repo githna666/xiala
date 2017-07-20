@@ -1,0 +1,137 @@
+`<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/zepto.js"></script>
+		<style>
+			.a1{
+				width: 400px;
+				height: 350px;
+				background: #525A5A;
+				margin: 100px auto;
+			}
+			.a1 p{
+				color: white;
+				font-size: 30px;
+				padding: 10px;
+			}
+			.a1 .b1 #sp1{
+				float: left;
+				color: white;
+			}
+			.a1 .b1 #sp2{
+				float: right;
+				color: white;
+			}
+			.a1 input{
+				width: 300px;
+				height: 28px;
+				margin-left: 15px;
+				margin-top: 10px;
+			}
+			.a1 button{
+				width: 50px;
+				height: 32px;
+			}
+			.ul1{
+				width: 300px;
+				background: white;
+				position: absolute;
+				top: 250px;
+				left: 610px;
+				display: none;
+			}
+			.ul1 li{
+				list-style: none;
+				height: 20px;
+				border-bottom: 1px solid gray;
+				margin-left: -35px;
+			}
+			.ul2{
+				width: 300px;
+				background: white;
+				position: absolute;
+				top: 310px;
+				left: 615px;
+				display: none;
+			}
+			.ul2 li{
+				list-style: none;
+				height: 20px;
+				border-bottom: 1px solid gray;
+				margin-left: -35px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a1">
+			<p>快速搜搜消费货款</p>
+			<div class="b1">
+				<span id="sp1">货款金额:</span>
+				<span id="sp2">不足一万用小鼠标是</span>
+			</div><br>
+			<input type="text" id="inp1" value="5"/><button id="bt1">点</button><br>
+			<span id="sp1" style="color: white;">货款金额:</span><br>
+			<input type="text" id="inp2" value="8"/><button id="bt2">点</button>
+		</div>
+		<ul class="ul1">
+			<li>5万元</li>
+			<li>8万元</li>
+			<li>7万元</li>
+			<li>9万元</li>
+			<li>6万元</li>
+		</ul>
+		<ul class="ul2">
+			<li>5万元</li>
+			<li>8万元</li>
+			<li>7万元</li>
+			<li>9万元</li>
+			<li>6万元</li>
+		</ul>
+	</body>
+	<script>
+		$(function(){
+			$("#bt1").click(function(){
+				$(".ul1").css("display","block")
+				
+			})
+			$(".ul1 li").click(function(){
+				$(".ul1 li").css("background","white")
+				$(this).css("background","deepskyblue")
+               var a = parseInt($(this).text())
+					$("#inp1").val(a)
+					
+			})
+			$("#bt1").click(function(){
+				$('.ul1').slideDown(200)
+				return false;
+			})
+			$("body").click(function(){
+				$('.ul1').slideUp(200)
+				
+			})
+			
+			
+			$("#bt2").click(function(){
+				$(".ul2").css("display","block")
+				
+			})
+			$(".ul2 li").click(function(){
+				$(".ul2 li").css("background","white")
+				$(this).css("background","deepskyblue")
+               var a = parseInt($(this).text())
+					$("#inp2").val(a)
+					
+			})
+			$("#bt2").click(function(){
+				$('.ul2').slideDown(200)
+				return false;
+			})
+			$("body").click(function(){
+				$('.ul2').slideUp(200)
+				
+			})
+		})
+	</script>
+</html>
